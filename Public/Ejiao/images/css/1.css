@@ -1,0 +1,79 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;}
+
+body{width:100%; height:11700px; background:url(../bg.jpg) no-repeat; background-position:center; font:14px "微软雅黑" color:#FFFFFF; text-align:center;}
+.box{ width:1000px; height:11700px; margin:0 auto; background:#FFFFFF;}
+
+.banner{ width:1000px; height:650px; float:left; background:url(../banner.jpg) no-repeat;}
+
+.bottom{width:100%; height:50px; position:fixed; margin:0 auto; bottom:0px; background:url(../buttom.jpg) center top no-repeat #91121b;}
+.navigation{background:none; width:1000px; height:99px; float:left; color:#FFFFFF; font:18px "微软雅黑"; line-height:60px; font-weight:550;}
+.navigation a{padding:0px; margin:0px; font-family:"微软雅黑"; font-size: 18px; color:#FFFFFF;}
+.navigation a:link {color: #fff; text-decoration: none;}
+.navigation a:visited {color: #fff; text-decoration: none;}
+.navigation a:hover {color: #fff; text-decoration:none;}
+.navigation a:active {color: #fff; text-decoration:none;}
+
+.ejls{}
+.ejls .titlebar{width:1000px; height:660px;}
+.ejls .content{}
+
+.xqcs{}
+.xqcs .titlebar{width:1000px; height:880px; text-align:left;}
+.xqcs .content{}
+.xqcs .right{width:368px; height:616px; float:right; background:none;}
+
+.ejhp{}
+.ejhp .titlebar{width:1000px; height:1000px; text-indent:-9999px;}
+.ejhp .content{}
+
+.gxhzy{}
+.gxhzy .titlebar{width:1000px; height:710px; text-indent:-9999px;}
+.gxhzy .content{}
+
+.zjps{}
+.zjps .titlebar{width:1000px; height:680px; text-indent:-9999px;}
+.zjps .content{}
+
+.syrq{}
+.syrq .titlebar{width:1000px; height:840px; text-indent:-9999px;}
+.syrq .content{}
+
+.xfzpl{}
+.xfzpl .titlebar{width:1000px; height:655px; text-indent:-9999px;}
+.xfzpl .content{}
+
+.zxdg{}
+.zxdg .titlebar{width:1000px; height:690px;}
+.zxdg .content{}
+
+.wmdcn{}
+.wmdcn .titlebar{width:1000px; height:950px; text-indent:-9999px;}
+.wmdcn .content{}
+
+.hdfk{}
+.hdfk .titlebar{}
+.hdfk .content{}
+
+
+.p2{width:1000px; height:710px; float:left; background:url(../p2.jpg) no-repeat;}
+.p3{width:1000px; height:660px; float:left; background:url(../p3.jpg) no-repeat;}
+.p4{width:1000px; height:880px; float:left; background:url(../p4.jpg) no-repeat;}
+.p5{width:1000px; height:1000px; float:left; background:url(../p5.jpg) no-repeat;}
+.p6{width:1000px; height:710px; float:left; background:url(../p6.jpg) no-repeat;}
+.p7{width:1000px; height:920px; float:left; background:url(../p7.jpg) no-repeat;}
+.p8{width:1000px; height:680px; float:left; background:url(../p8.jpg) no-repeat;}
+.p9{width:1000px; height:680px; float:left; background:url(../p9.jpg) no-repeat;}
+.p10{width:1000px; height:840px; float:left; background:url(../p10.jpg) no-repeat;}
+.p11{width:1000px; height:690px; float:left; background:url(../p11.jpg) no-repeat;}
+.p12{width:1000px; height:655px; float:left; background:url(../p12.jpg) no-repeat;}
+.p13{width:1000px; height:720px; float:left; background:url(../p13.jpg) no-repeat;}
+.p14{width:1000px; height:750px; float:left; background:url(../p14.jpg) no-repeat;}
+.p14 .left{width:500px; height:750px; float:left; background:none;}
+.p14 .right{width:500px; height:750px; float:right; background:none;}
+.p15{width:1000px; height:964px; float:left; background:url(../p15.jpg) no-repeat;}
+.tail{width:1000px; height:92px; float:left; background:url(../1_19.jpg) no-repeat;}
+.tail span{ text-align:center; color:#d9a365; font-size:12px; line-height:50px;}
+

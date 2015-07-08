@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>99培元-产品信息添加</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/float.css">
+   
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pagination.css">
+    <script src="__PUBLIC__/Js/jq.js"></script>
+    <script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+    <script src="__PUBLIC__/Admin/js/respond.js"></script>
+    <script src="__PUBLIC__/Admin/js/admin.js"></script>
+
+    
+</head>
+
+<body>
+<div class="lefter">
+    <div class="logo"><a href="#" target="_blank"><img src="__PUBLIC__/Admin/images/logo.png" alt="后台管理系统" /></a></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<a class="button button-little bg-main" href="__APP__">网站首页</a>
+                <a class="button button-little bg-yellow" href="__MODULE__/Login/LoginOut">注销登录</a>
+            </span>
+      <include file="Public/navi" /> 
+        </div>
+        <div class="admin-bread" >
+            <span>您好，<font style="color:red" ><{$Think.session.useradmin}> </font>，欢迎您。</span>
+            <ul class="bread">
+                <li><a href="__MODULE__/User/index/System/<{$System}>" class="icon-home"> 开始</a></li>
+                
+                <li>产品信息添加</li>
+            </ul>
+			    
+			
+        </div>
+    </div>
+</div>
+
+<div class="admin">
+	
+    <div class="panel admin-panel">
+
+	<center>
+	   	<div class="panel-head"><strong>产品信息列表</strong></div>
+		<form action="__MODULE__/Product/DoAdd/System/<{$System}>" method="post">
+				  <table class="table table-hover" border=1 style="text-align:center">
+
+				<tr><td>产品名字</td><td>产品价格</td><td>套餐名字</td><td>赠送优惠</td><td>产品图片的名字</td></tr>
+			
+			<tr><td><input type="text" name="productname" /></td><td><input type="text" name="price" /></td><td><input type="text" name="producttype" /></td><td><input type="text" name="preferential" /></td><td><input type="text" name="picsrc" /></td>	</tr>
+
+			<tr  ><td colspan=5><br/><input type="submit" value="确认添加" /></td></tr>
+		
+		
+		</table>
+		</form>
+	</center>
+
+    </div>
+
+    <br />
+
+    <p class="text-center">Power By Blues &copy; 2015</p>
+</div>
+
+
+</body>
+</html>

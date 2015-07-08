@@ -1,0 +1,19 @@
+        <ul class="nav nav-inline admin-nav">
+              
+              
+                <li class="active"><a href="__MODULE__/User/index/System/Maka" class="icon-shopping-cart" class="icon-file-text" onclick="menuChange()" >玛卡订单管理</a>
+					<ul>
+					
+					<li><a href="#"> </a></li><li class="active"><a href="__MODULE__/User/Index/System/<{$System}>">订单管理</a><li><a href="__MODULE__/Order/Search/System/<{$System}>">订单搜索</a><li><a href="__MODULE__/Product/All/System/<{$System}>" >产品设定</a></li><li><a href="__MODULE__/Advisory/Index/System/<{$System}>" >美容测试</a></li>
+					 <if condition="strtolower($System) eq 'ejiao'">
+																<li><a href="__MODULE__/News/Index/System/<{$System}>">新闻资讯管理</a></li> 
+															<else/>
+													</if>
+				
+					 
+					<li>【<font color="red"><{$System}></font>】订单管理</li>
+					</ul>
+                </li>
+					  <li   class="active"><a href="__MODULE__/User/index/System/Ejiao" class="icon-shopping-cart"  style="margin-left:300px;background:white;border:1px solid #09c;border-bottom:none;color:#09c" class="icon-file-text" >阿胶订单管理</a></li>
+               
+            </ul>

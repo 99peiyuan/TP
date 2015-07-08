@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title>99培元-后台订单修改管理</title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/float.css">
+   
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pagination.css">
+    <script src="__PUBLIC__/Js/jq.js"></script>
+    <script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+    <script src="__PUBLIC__/Admin/js/respond.js"></script>
+    <script src="__PUBLIC__/Admin/js/admin.js"></script>
+
+    <script>
+			$(function(){
+					$("#num").on("blur",function(){
+					
+							var num=$("#num").val();
+							var productid=$("#productid").val();
+							var price=$("#price"+productid+"").val();
+							var total=price*num;
+						
+							$("#total").val(total);
+							
+					});
+			
+			//如果修改了 非 用户信息的状态
+			
+				$(".flag").on("blur",function(){
+						$("#bool").val(1);
+				
+				});
+			
+			
+			
+			
+			});
+		
+	</script>
+</head>
+
+<body>
+<div class="lefter">
+    <div class="logo"><a href="#" target="_blank"><img src="__PUBLIC__/Admin/images/logo.png" alt="后台管理系统" /></a></div>
+</div>
+<div class="righter nav-navicon" id="admin-nav">
+    <div class="mainer">
+        <div class="admin-navbar">
+            <span class="float-right">
+            	<a class="button button-little bg-main" href="__APP__">网站首页</a>
+                <a class="button button-little bg-yellow" href="__MODULE__/Login/LoginOut">注销登录</a>
+            </span>
+ <include file="Public/navi" /> 
+        </div>
+        <div class="admin-bread" >
+            <span>您好，<font style="color:red" ><{$Think.session.useradmin}> </font>，欢迎您。</span>
+            <ul class="bread">
+                <li><a href="__MODULE__/User/index/System/<{$System}>" class="icon-home"> 开始</a></li>
+                
+                <li>订单信息修改</li>
+            </ul>
+			    
+			
+        </div>
+    </div>
+</div>
+
+<div class="admin">
+	
+    <div class="panel admin-panel">
+	<form  name="form1" id="form1" action="__MODULE__/Order/DoModify/System/<{$System}>" method="POST">
+	
+				  <table class="table table-hover" border=1 style="text-align:center">
+        	
+				
+            
+            	<input type="hidden" value="<{$Think.session.useradmin}>" name="operator" />
+            
+         
+				
+			
+				<foreach name="data" item="vo" >
+				
+			<tr><td width="50%" >订单号</td><td><{$vo.ordernum}></td></tr>
+			
+			<tr><td width="50%">产品名字*盒数--总价格</td>
+						<foreach name="productData" item="v">
+										
+									<input type="hidden" value="<{$v.price}>" name="price<{$v.id}>" id="price<{$v.id}>" />
+				</foreach>
+			<td>
+			<select name="productid"id="productid">
+			
+	
+										<foreach name="productData" item="v">
+								
+									<if  condition="$vo['productid'] eq $v['id']" >
+											<option  selected value="<{$v.id}>">已选中--<{$v.productname}>/￥<{$v.price}></option>
+											
+											<else/>
+											<option value="<{$v.id}>"><{$v.productname}>/￥<{$v.price}></option>
+									
+									</if>
+									
+									
+									
+							</foreach>
+							</select>
+						</td></tr>
+						<input type="hidden" value="<{$vo.num}>" name="oldnum"  />
+					
+						<input type="hidden" value="<{$vo.name}>" name="oldname" />
+						<input type="hidden" value="<{$vo.address}>" name="oldaddress" />
+						<input type="hidden" value="<{$vo.phone}>" name="oldphone" />
+						   	<input type="hidden" value="<{$vo.total}>" name="total" id="total" />
+						   	<input type="hidden" value="0" name="bool" id="bool"  />
+						  
+			<tr><td width="50%">购买数量</td><td><input type="text" value="<{$vo.num}>" name="num" id="num" class="flag" /></td></tr>
+			<tr><td width="50%">客户名</td><td><input type="text" value="<{$vo.name}>" name="name" class="flag" /></td></tr>
+			<tr><td width="50%">联系电话</td><td><input type="text" value="<{$vo.phone}>" name="phone" class="flag" /></td></tr>
+			<tr><td width="50%">联系地址</td><td><input type="text" value="<{$vo.address}>" name="address" class="flag" /></td></tr>
+			<tr><td width="50%">用户留言</td><td><textarea name="word" class="flag" ><{$vo.word}></textarea></td></tr>
+			<tr><td width="50%">付款方式</td><td><{$vo.payment}></td></tr>
+			<tr><td width="50%">下单时间</td><td><{$vo.ordertime|date="Y-m-d h:i:s",###}></td></tr>
+			<tr><td width="50%">订单状态</td><td>
+			<select name="status" class="flag">
+							
+						
+					
+					    <switch name="vo.status">
+								<case value="0"><option value="0">--已选中--未确认</option></case>
+								<case value="1"><option value="1">--已选中--已确认</option></case>
+								<case value="2"><option value="2">--已选中--已发货</option></case>
+								<default />
+					</switch>
+							<option value="0">
+									--未确认--
+							
+							</option>
+							<option value="1">
+									--已确认--
+							
+							</option>
+							<option value="2">
+									--已发货--
+							
+							</option>
+					
+					
+						</select></td></tr>
+			<tr><td width="50%">快递公司</td><td><input  name="expressname" value="<{$vo.expressname}>" class="flag"/></td></tr>
+			<tr><td width="50%">快递单号</td><td><input  name="expressnum" value="<{$vo.expressnum}>" class="flag"/></td></tr>
+			<tr><td width="50%">操作</td><td><input type="submit"  value="确认修改" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="javascript:history.go(-1);" value="返回" /> </td></tr>
+				
+	
+						<input type="hidden" value="<{$vo.ordernum}>" name="ordernum"/>
+						<input type="hidden" value="<{$vo.orderid}>" name="orderid"/>
+						<input type="hidden" value="<{$System}>" name="System"/>
+				
+					<input type="hidden" value="" name="price" id="price" />
+				
+				</foreach>
+		
+
+		
+		</table>
+		    </form>
+    </div>
+
+    <br />
+
+    <p class="text-center">Power By Blues &copy; 2015</p>
+</div>
+
+
+</body>
+</html>

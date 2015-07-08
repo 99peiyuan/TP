@@ -1,0 +1,18 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;}
+div{margin:0; padding:0; border:0;}
+img{display:block;}
+
+.ej1{width:100%; position:relative;}
+.ej1_t{width:100%; position:absolute; bottom:0px; height:40%;}
+.ej1_t a{display:block; width:25%; height:45%; float:left;}
+#ej6{width:100%; position:relative;}
+.ej6_t{width:30%; right:0; top:0; height:100%; position:absolute;}
+.ej6_t a{display:block; width:80%; height:8%; margin-top:75%;}
+#ej9{width:100%; position:relative;}
+.ej9_t{position:absolute; width:100%; height:100%; top:0;}
+/* .maka10_b{bottom:0%; position:absolute; width:100%; height:100%;}
+.maka10_b div a{display:block; width:30%; margin-left:2%; height:100%; float:left;} */
+.maka10_b{bottom:0%; position:absolute; width:100%; height:100%;}
+.maka10_b div{display:block; width:30%; margin-left:2%; height:100%; float:left}
+.maka10_b  div a{display:block; width:100%;  height:100%; }
+#bottomContent{ position:fixed; width:100%; bottom:0px; margin:0; padding:0;}
